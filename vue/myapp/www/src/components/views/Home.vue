@@ -3,6 +3,7 @@
     <div id="content">
       <img :src="imageSrc" />
       <p>
+        HOME!
         {{ $t("welcome") }}<br>
         {{ $t("language") }} {{ getLanguage() }}
       </p>
@@ -21,9 +22,9 @@
     methods:{
     },
     created() {
-      // this.$http.get('images/logo.png').then(function(response){
-      //   this.imageSrc = response.url;
-      // });
+      this.$http.get('images/logo.png').then(function(response){
+        this.imageSrc = response.url;
+      });
     },
     mounted(){
       this.clientHeight = document.documentElement.clientHeight + 'px';
